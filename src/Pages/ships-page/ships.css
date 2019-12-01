@@ -1,0 +1,17 @@
+.mission_about{
+    display: flex;
+    justify-content: space-around;
+}
+.mission_details{
+    max-width: 80%;
+}
+span{
+    margin-bottom: 10px;
+    display: block;
+}
+svg{
+    margin-right: 10px;
+}
+.ships_details{
+     margin-left: 50px;
+ }

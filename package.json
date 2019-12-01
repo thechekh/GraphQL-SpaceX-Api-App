@@ -1,16 +1,26 @@
 {
-  "name": "newproj",
+  "name": "proj",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/jest": "24.0.23",
-    "@types/node": "12.12.14",
-    "@types/react": "16.9.13",
-    "@types/react-dom": "16.9.4",
+    "@apollo/react-hooks": "^3.1.3",
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.7",
+    "@types/react-router-dom": "^5.1.3",
+    "apollo-boost": "^0.4.4",
+    "graphql": "^14.5.8",
     "react": "^16.12.0",
+    "react-apollo": "^3.1.3",
     "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "typescript": "3.7.2"
+  },
+  "devDependencies": {
+    "@types/graphql": "^14.5.0",
+    "@types/react": "^16.9.13",
+    "@types/react-dom": "^16.9.4"
   },
   "scripts": {
     "start": "react-scripts start",

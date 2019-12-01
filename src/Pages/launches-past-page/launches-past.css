@@ -1,0 +1,7 @@
+.mission_about{
+    display: flex;
+    justify-content: space-around;
+}
+.mission_details{
+    max-width: 80%;
+}
