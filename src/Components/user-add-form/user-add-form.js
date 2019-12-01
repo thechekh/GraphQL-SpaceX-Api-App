@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { useMutation} from '@apollo/react-hooks';
 
 import './user-add-form.css';
 
@@ -18,8 +19,7 @@ export default class UserAddForm extends Component {
     e.preventDefault();
     const { label } = this.state;
     this.setState({ label: '' });
-    const addUser = this.props.addUser || (() => {});
-    addUser(label);
+/*this.props.addUser({variables:{name:label}});*/
   };
 
   render() {
