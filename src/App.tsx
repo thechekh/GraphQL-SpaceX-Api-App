@@ -1,5 +1,6 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {ToastContainer} from "react-toastify";
 
 
 import MainPage from "./Pages/main-page";
@@ -11,6 +12,7 @@ export default class App extends React.Component {
     render() {
         return (
             <>
+                <ToastContainer/>
                 <Router>
                     <Switch>
                         <Route exact path="/" component={MainPage}/>

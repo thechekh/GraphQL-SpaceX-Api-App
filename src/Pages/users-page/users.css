@@ -1,17 +1,13 @@
-.mission_about{
-    display: flex;
-    justify-content: space-around;
+.users_page {
+    margin-left: 50px;
 }
-.mission_details{
-    max-width: 80%;
+
+.delete_user_icon {
+    margin-left: 10px;
+    transition: background 250ms ease-in-out, transform 150ms ease;
 }
-span{
-    margin-bottom: 10px;
-    display: block;
+
+.delete_user_icon:hover {
+    transform: scale(1.2);
+    cursor: pointer;
 }
-svg{
-    margin-right: 10px;
-}
-.ships_details{
-     margin-left: 50px;
- }

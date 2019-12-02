@@ -1,17 +1,21 @@
-.mission_about{
+.mission_about {
     display: flex;
     justify-content: space-around;
 }
-.mission_details{
+
+.mission_details {
     max-width: 80%;
 }
-span{
+
+.ships_details span {
     margin-bottom: 10px;
     display: block;
 }
-svg{
+
+.ships_details svg {
     margin-right: 10px;
 }
-.ships_details{
-     margin-left: 50px;
- }
+
+.ships_details {
+    margin-left: 50px;
+}

@@ -1,0 +1,15 @@
+.add_user_button {
+    color: #ffa260;
+    background: none;
+    border: 2px solid;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 1em 2em;
+    transition: background 250ms ease-in-out, transform 150ms ease;
+}
+.add_user_button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}

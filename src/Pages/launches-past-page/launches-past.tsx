@@ -1,20 +1,11 @@
 import React from "react";
-import {gql} from "apollo-boost";
 import {useQuery} from '@apollo/react-hooks';
 
+
+import GET_LAUNCHES from "./queries";
 import './launches-past.css'
 
-const GET_LAUNCHES = gql`
-  {
-   launchesPast(limit: 10) {
-      mission_name
-      details
-      links {
-        flickr_images
-      }
-    }
-  }
-`;
+
 export default () => {
 
     // @ts-ignore
@@ -25,7 +16,9 @@ export default () => {
             ? "Loading..."
             :
             data.launchesPast.map(({mission_name, details, links}: {
-                mission_name: string, details: string, links: {
+                mission_name: string,
+                details: string,
+                links: {
                     flickr_images: string
                 }
             }) => (

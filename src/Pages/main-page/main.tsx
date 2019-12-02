@@ -9,16 +9,16 @@ const Main = () => {
         <div className="main-page">
 
             <img src={logo} alt="SpaceX logo" width={500}/>
-            <h1>SpaceX GraphQL App </h1>
+            <h1 className='main_header'>SpaceX GraphQL App </h1>
             <div className="buttons">
                 <Link to={"/launches"}>
-                    <button> Launches</button>
+                    <button className="main_page_button"> Launches</button>
                 </Link>
                 <Link to={"/ships"}>
-                <button>Ships</button>
+                    <button className="main_page_button"> Ships</button>
                 </Link>
                 <Link to={"/users"}>
-                <button>Users</button>
+                    <button className="main_page_button"> Users</button>
                 </Link>
             </div>
 

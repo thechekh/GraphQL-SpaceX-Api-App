@@ -1,16 +1,18 @@
-.main-page{
+.main-page {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
 
 }
-h1{
+
+.main_header {
     text-align: center;
     font-family: 'Tomorrow', serif;
 }
-button{
-    color:#ffa260;
+
+.main_page_button {
+    color: #ffa260;
     background: none;
     border: 2px solid;
     font-weight: normal;
@@ -20,7 +22,8 @@ button{
     padding: 1em 2em;
     transition: background 250ms ease-in-out, transform 150ms ease;
 }
-button:hover{
+
+.main_page_button:hover {
     cursor: pointer;
     transform: scale(1.1);
 }
