@@ -5,17 +5,16 @@ import GET_USERS from "./queries";
 import UserAddForm from "../../Components/user-add-form";
 import './users.css'
 
-import ADD_USER from "../../Components/user-add-form/mutations";
 import DELETE_USER from "./mutations";
 import USERS_SUBSCRIBE from "./subscriptions";
-import {faSpaceShuttle, faUserMinus} from '@fortawesome/free-solid-svg-icons'
+import { faUserMinus} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const Users = () => {
 
 
-    // @ts-ignore
-    const {errors, loading, data} = useQuery(GET_USERS);
+
+    const {error, loading, data} = useQuery(GET_USERS);
     const [deleteUser] = useMutation(DELETE_USER);
     const users = useSubscription(USERS_SUBSCRIBE);
     console.log('users',users)
@@ -24,7 +23,7 @@ const Users = () => {
             <h1>Users</h1>
             <UserAddForm/>
             {
-                errors
+                error
                     ? "Error!" : loading
                     ? "Loading..."
                     :
@@ -35,7 +34,7 @@ const Users = () => {
                             <div className="users_details">
                                 <h2 className='user_name'>User name:{name}
                                     <FontAwesomeIcon className="delete_user_icon"
-                                                     onClick={e =>
+                                                     onClick={() =>
                                                          deleteUser({variables: {userName: name}})}
                                                      icon={faUserMinus}/>
                                 </h2>

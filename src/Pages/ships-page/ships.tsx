@@ -8,12 +8,10 @@ import './ships.css'
 
 
 export default () => {
-    // @ts-ignore
-    const {errors, loading, data} = useQuery(GET_SHIPS);
-
-    return errors
-        ? "Error!"
-        : loading
+    const {error, loading, data} = useQuery(GET_SHIPS);
+    return error
+        ? "Error!" :
+        loading
             ? "Loading..."
             :
             data.ships.map(({id, name, roles, speed_kn, weight_kg, type, year_built}: {

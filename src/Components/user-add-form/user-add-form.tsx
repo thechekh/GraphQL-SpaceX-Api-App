@@ -7,21 +7,18 @@ import './user-add-form.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 const AddTodo = () => {
-    let input: {
-        value: string
-    } | any;
+    let input: HTMLInputElement | null;
     const [addTodo] = useMutation(ADD_USER);
-
     return (
         <div>
             <form
                 onSubmit={e => {
                     e.preventDefault();
-                    addTodo({variables: {name: input.value}})
-                        .then(data =>
-                            console.log('user',data));
-                         /*   toast.success(`User ${user} added`, {position: "bottom-right"}));*/
-                    input.value = '';
+                    addTodo({variables: {name: input!.value}})
+                        .then(res =>
+                            toast.success(`User ${res.data.insert_users.returning[0].name} Added`,
+                                {position: "bottom-right"}));
+                    input!.value = '';
                 }}
             >
                 <input

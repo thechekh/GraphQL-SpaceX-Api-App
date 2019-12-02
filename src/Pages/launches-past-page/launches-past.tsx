@@ -5,12 +5,9 @@ import {useQuery} from '@apollo/react-hooks';
 import GET_LAUNCHES from "./queries";
 import './launches-past.css'
 
-
 export default () => {
-
-    // @ts-ignore
-    const {errors, loading, data} = useQuery(GET_LAUNCHES);
-    return errors
+    const {error, loading, data} = useQuery(GET_LAUNCHES);
+    return error
         ? "Error!"
         : loading
             ? "Loading..."
