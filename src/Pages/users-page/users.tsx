@@ -1,5 +1,5 @@
 import React from "react";
-import {useQuery, useMutation} from '@apollo/react-hooks';
+import {useQuery, useMutation,useSubscription} from '@apollo/react-hooks';
 
 import GET_USERS from "./queries";
 import UserAddForm from "../../Components/user-add-form";
@@ -7,15 +7,18 @@ import './users.css'
 
 import ADD_USER from "../../Components/user-add-form/mutations";
 import DELETE_USER from "./mutations";
+import USERS_SUBSCRIBE from "./subscriptions";
 import {faSpaceShuttle, faUserMinus} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const Users = () => {
 
+
     // @ts-ignore
     const {errors, loading, data} = useQuery(GET_USERS);
     const [deleteUser] = useMutation(DELETE_USER);
-
+    const users = useSubscription(USERS_SUBSCRIBE);
+    console.log('users',users)
     return (
         <div className='users_page'>
             <h1>Users</h1>

@@ -1,4 +1,4 @@
-import {gql} from "apollo-boost";
+import gql from "graphql-tag";
 
 const DELETE_USER = gql`
 mutation ($userName:String){
