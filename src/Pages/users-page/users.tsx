@@ -38,7 +38,7 @@ const Users = () => {
                     className="delete_user_icon"
                     onClick={() =>
                       deleteUser({
-                        variables: { userName: name }
+                        variables: { name: name }
                       })
                     }
                     icon={faUserMinus}
