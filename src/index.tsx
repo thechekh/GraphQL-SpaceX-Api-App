@@ -1,6 +1,5 @@
 import React, {Suspense} from "react";
 import {render} from "react-dom";
-
 import {ApolloProvider} from 'react-apollo';
 import {ApolloClient} from 'apollo-client';
 import {InMemoryCache} from 'apollo-cache-inmemory';
@@ -11,37 +10,10 @@ import {ApolloLink} from 'apollo-link';
 import App from "./App";
 import "./index.css";
 
-import {split} from 'apollo-link';
-import {WebSocketLink} from 'apollo-link-ws';
-import {getMainDefinition} from 'apollo-utilities';
-
-// Create an http link:
 const httpLink = new HttpLink({
     uri: 'https://api.spacex.land/graphql/',
     credentials: 'same-origin'
 });
-
-// Create a WebSocket link:
-const wsLink = new WebSocketLink({
-    uri: `ws://api.spacex.land/graphql/`,
-    options: {
-        reconnect: true
-    }
-});
-
-
-const link = split(
-    // split based on operation type
-    ({query}) => {
-        const definition = getMainDefinition(query);
-        return (
-            definition.kind === 'OperationDefinition' &&
-            definition.operation === 'subscription'
-        );
-    },
-    wsLink,
-    httpLink,
-);
 const client = new ApolloClient({
     link: ApolloLink.from([
         onError(({graphQLErrors, networkError}) => {
@@ -54,7 +26,6 @@ const client = new ApolloClient({
             if (networkError) console.log(`[Network error]: ${networkError}`);
         }),
         httpLink,
-        wsLink
     ]),
     cache: new InMemoryCache()
 });
