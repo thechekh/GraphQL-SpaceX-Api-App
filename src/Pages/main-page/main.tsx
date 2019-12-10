@@ -1,13 +1,12 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import logo from '../../assets/logo.png'
 
+import logo from '../../assets/logo.png'
 import "./main.css";
 
 const Main = () => {
     return (
         <div className="main-page">
-
             <img src={logo} alt="SpaceX logo" width={500}/>
             <h1 className='main_header'>SpaceX GraphQL App </h1>
             <div className="buttons">
@@ -21,7 +20,6 @@ const Main = () => {
                     <button className="main_page_button"> Users</button>
                 </Link>
             </div>
-
         </div>
     );
 };
